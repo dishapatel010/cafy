@@ -1,4 +1,4 @@
-# Laurel Cafe (Telegram Mini App)
+ # Laurel Cafe (Telegram Mini App)
 
 Laurel Cafe is an imaginary cafe that runs on Telegram as a Mini App. The project demonstrates basic concepts and approaches of building Telegram Mini App.
 
