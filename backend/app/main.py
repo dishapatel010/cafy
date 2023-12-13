@@ -46,7 +46,7 @@ def info():
       JSON data from data/info.json file or error message with 404 code if not found.
     """
     try:
-        return json_data('data/info.json')
+        return json_data('backend/data/info.json')
     except FileNotFoundError:
         return { 'message': 'Could not find info data.' }, 404
 
@@ -58,7 +58,7 @@ def categories():
       JSON data from data/categories.json file or error message with 404 code if not found.
     """
     try:
-        return json_data('data/categories.json')
+        return json_data('backend/data/categories.json')
     except FileNotFoundError:
         return { 'message': 'Could not find categories data.' }, 404
 
@@ -73,7 +73,7 @@ def category_menu(category_id: str):
       JSON data from one of data/menu/<category_id>.json file or error message with 404 code if not found.
     """
     try:
-        return json_data(f'data/menu/{category_id}.json')
+        return json_data(f'backend/data/menu/{category_id}.json')
     except FileNotFoundError:
         return { 'message': f'Could not find `{category_id}` category data.' }, 404
 
@@ -88,7 +88,7 @@ def menu_item_details(menu_item_id: str):
       JSON data from one of data/menu/<category_id>.json file or error message with 404 code if not found.
     """
     try:
-        data_folder_path = 'data/menu'
+        data_folder_path = 'backend/data/menu'
         for data_file in os.listdir(data_folder_path):
             menu_items = json_data(f'{data_folder_path}/{data_file}')
             desired_menu_item = next((menu_item for menu_item in menu_items if menu_item['id'] == menu_item_id), None)
